@@ -12,7 +12,7 @@ export default function MessageHeader({ chatId, users }) {
     const [conversation, setConversation] = useState(null)
     
     const conversationAvatar = () => {
-        const recipientId = conversation.membersId.filter(id => id !== uid)
+        const recipientId = conversation.membersId.filter(id => id !== uid)[0]
         const recipientUser = users.filter(user => user.id == recipientId)[0]
         if (conversation.id === "theMegaChat") {
             return "/DALLE_avatar.png"

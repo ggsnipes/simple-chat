@@ -5,16 +5,12 @@ import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import Banner from './components/Banner'
 import { useEffect, useState } from 'react';
-import { GetUsers ,RegisterUser } from './user';
-
-
+import { GetUsers ,RegisterUser } from './utils/user';
 
 function App() {
   
-  const [ users , setUsers ] = useState()
+  const [users, setUsers] = useState(null)
   const [user] = useAuthState(auth);
-  
-
   
   useEffect(()=> {
     GetUsers(setUsers)
@@ -26,13 +22,10 @@ function App() {
       RegisterUser()
       }
     }
-
-  
-    // console.log(users);
   
   return (
     <div className="App">
-      <Banner user={user}/>
+      {user && <Banner user={user}/>}
       {!user ? <LoginPage /> : <HomePage users={users} />}
     </div>
   );

@@ -1,18 +1,15 @@
 import "./Aside.css"
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import ChatCard from './ChatCard'
 import { ChooseRecipient } from "./ChooseRecipient";
 import ProfileHeader from './ProfileHeader'
-import { useState } from "react";
-import { useEffect } from "react";
-import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
 import { query, collection, orderBy, onSnapshot, where } from "firebase/firestore";
 
 
 
 export default function Aside({ setChatId, currentChatId, users }) {
-    const { uid, displayName, photoURL } = auth.currentUser;
+    const { uid } = auth.currentUser;
     const [conversationList, setConversationList] = useState(null) // list of user conversations id
     const [isNewChat, setIsNewChat] = useState(false) // for toggling the conditional rendering of the new chat ID input
 
@@ -44,7 +41,6 @@ export default function Aside({ setChatId, currentChatId, users }) {
                    conversation={conversation} 
                    setChatId={setChatId} 
                    currentChatId={currentChatId}
-                   setConversationList={setConversationList}
                    conversationList={conversationList}
                    users={users}
                    />

@@ -6,9 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import { query, collection, orderBy, onSnapshot, limit} from "firebase/firestore";
 import { db } from "../firebase";
 
-export default function ChatBox({ chatId, scollToRef, users }) {
+export default function ChatBox({ chatId, users }) {
     const [messages, setMessages] = useState([]);
-    
+    const scollToRef = useRef()
 
     useEffect(() => {
         const q = query(

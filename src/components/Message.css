@@ -34,21 +34,15 @@
 .time-sent {
     font-weight: 200;
     font-size: .7rem;
-    bottom: 0;
-    right: 0;
     text-align: right;
 }
 
 .delete-btn {
     border: none;
     background: none;
-    top: 0;
-    right: 0;
 }
 
 #deleteMsgBtn:hover {
     cursor: pointer;
     transform: scale(1.4);
 }
-
-/* * {border: red 1px solid} */

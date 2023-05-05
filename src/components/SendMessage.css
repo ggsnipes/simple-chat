@@ -29,10 +29,3 @@
     padding: 3px;
     font-size: 1rem
 }
-
-#sendMessageBtn:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    background-color: var(--dark);
-    color: white;
-}

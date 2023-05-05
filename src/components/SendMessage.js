@@ -36,14 +36,14 @@ export default function SendMessage({ chatId , scollToRef  }) {
         Enter Message
         </label>
         <input
-        id="messageInput"
-        name="messageInput"
-        type="text"
-        className="form-input__input"
-        placeholder="type message..."
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
+          id="messageInput"
+          name="messageInput"
+          type="text"
+          className="form-input__input"
+          placeholder="type message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
         <button disabled={message ? false : true } type="submit" id='sendMessageBtn'>
         <FontAwesomeIcon icon={faPaperPlane} />
         </button>

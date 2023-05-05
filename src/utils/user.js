@@ -1,5 +1,5 @@
 import { query, collection, doc , onSnapshot, setDoc} from "firebase/firestore";
-import { auth, db } from "./firebase";
+import { auth, db } from "../firebase";
 
 
 export function GetUsers( setUsers ) {
